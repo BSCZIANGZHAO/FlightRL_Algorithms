@@ -41,7 +41,7 @@ def parser():
                         help="Directory where to save the checkpoints and training metrics")
     parser.add_argument('--seed', type=int, default=0,
                         help="Random seed")
-    parser.add_argument('-w', '--weight', type=str, default='./saved/2024-02-27-14-36-26_Iteration_2379.zip',
+    parser.add_argument('-w', '--weight', type=str, default='./saved_sac/2024-02-27-14-36-26_Iteration_2379.zip',
                         help='trained weight path')
     return parser
 
@@ -77,7 +77,7 @@ def main():
     if args.train:
         # save the configuration and other files
         rsg_root = os.path.dirname(os.path.abspath(__file__))
-        log_dir = rsg_root + '/saved'
+        log_dir = rsg_root + '/saved_sac'
         saver = U.ConfigurationSaver(log_dir=log_dir)
         '''eslf, policy, env, gamma=0.99, n_steps=5, vf_coef=0.25, ent_coef=0.01, max_grad_norm=0.5,
                  learning_rate=7e-4, alpha=0.99, momentum=0.0, epsilon=1e-5, lr_schedule='constant',

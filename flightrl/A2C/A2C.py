@@ -301,7 +301,7 @@ class A2C(ActorCriticRLModel):
                         logger.dump_tabular()
 
                 except KeyboardInterrupt:
-                    print("You have stopped the learning process by keyboard interrupt. Model Parameter is saved. \n")
+                    print("You have stopped the learning process by keyboard interrupt. Model Parameter is saved_sac. \n")
                     # You can actually save files using the instance of self. save the model parameters.
                     self.save(log_dir + "_Iteration_{}".format(update))
                     sys.exit()
