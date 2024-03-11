@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: rpg-baselines
+Version: 0.0.1
+Summary: Flightmare: A Quadrotor Simulator.
+Author: Yunlong Song
+Author-email: song@ifi.uzh.ch
+Requires-Dist: gym==0.11
+Requires-Dist: ruamel.yaml
+Requires-Dist: numpy
+Requires-Dist: stable_baselines==2.10.1
