@@ -1,0 +1,81 @@
+Logging to /home/klee/Desktop/flightmare/flightrl/A2C/saved/2024-02-29-00-41-21
+---------------------------------
+| ep_len_mean        | 50.9     |
+| ep_reward_mean     | 1.69     |
+| explained_variance | -1.04    |
+| fps                | 52047    |
+| nupdates           | 1        |
+| policy_entropy     | 5.68     |
+| total_timesteps    | 30000    |
+| value_loss         | 2.95     |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 52.8     |
+| ep_reward_mean     | 1.83     |
+| explained_variance | -0.0871  |
+| fps                | 76171    |
+| nupdates           | 100      |
+| policy_entropy     | 5.68     |
+| total_timesteps    | 3000000  |
+| value_loss         | 0.772    |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 53.7     |
+| ep_reward_mean     | 2.16     |
+| explained_variance | 0.488    |
+| fps                | 76316    |
+| nupdates           | 200      |
+| policy_entropy     | 5.69     |
+| total_timesteps    | 6000000  |
+| value_loss         | 0.387    |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 52.6     |
+| ep_reward_mean     | 2.23     |
+| explained_variance | 0.669    |
+| fps                | 77574    |
+| nupdates           | 300      |
+| policy_entropy     | 5.71     |
+| total_timesteps    | 9000000  |
+| value_loss         | 0.216    |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 53.9     |
+| ep_reward_mean     | 2.57     |
+| explained_variance | 0.795    |
+| fps                | 78474    |
+| nupdates           | 400      |
+| policy_entropy     | 5.75     |
+| total_timesteps    | 12000000 |
+| value_loss         | 0.14     |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 53.2     |
+| ep_reward_mean     | 2.62     |
+| explained_variance | 0.814    |
+| fps                | 78714    |
+| nupdates           | 500      |
+| policy_entropy     | 5.81     |
+| total_timesteps    | 15000000 |
+| value_loss         | 0.129    |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 51.8     |
+| ep_reward_mean     | 2.77     |
+| explained_variance | 0.866    |
+| fps                | 78821    |
+| nupdates           | 600      |
+| policy_entropy     | 5.9      |
+| total_timesteps    | 18000000 |
+| value_loss         | 0.0982   |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 53.8     |
+| ep_reward_mean     | 3        |
+| explained_variance | 0.881    |
+| fps                | 79037    |
+| nupdates           | 700      |
+| policy_entropy     | 6.06     |
+| total_timesteps    | 21000000 |
+| value_loss         | 0.0976   |
+---------------------------------

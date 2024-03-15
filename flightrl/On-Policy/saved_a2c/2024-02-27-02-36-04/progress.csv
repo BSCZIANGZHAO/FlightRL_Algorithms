@@ -1,0 +1,2 @@
+fps,policy_entropy,value_loss,nupdates,explained_variance,ep_len_mean,ep_reward_mean,total_timesteps
+47016,5.675777435302734,2.9492461681365967,1,-1.0376288890838623,54.0,1.9397896787303397,25000

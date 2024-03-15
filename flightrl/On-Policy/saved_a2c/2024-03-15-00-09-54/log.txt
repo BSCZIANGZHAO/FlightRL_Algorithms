@@ -1,0 +1,11 @@
+Logging to /home/klee/Desktop/RL_Algorithms-main/flightrl/On-Policy/saved_a2c/2024-03-15-00-09-54
+---------------------------------
+| ep_len_mean        | 53.2     |
+| ep_reward_mean     | 1.82     |
+| explained_variance | -1.05    |
+| fps                | 162998   |
+| nupdates           | 1        |
+| policy_entropy     | 5.68     |
+| total_timesteps    | 50000    |
+| value_loss         | 3.52     |
+---------------------------------

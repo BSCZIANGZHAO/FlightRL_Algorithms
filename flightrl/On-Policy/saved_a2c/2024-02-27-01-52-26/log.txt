@@ -1,0 +1,33 @@
+Logging to /home/klee/Desktop/flightmare/flightrl/SAC/saved/2024-02-27-01-52-26
+--------------------------------------
+| approxkl           | 0.003697597   |
+| clipfrac           | 0.036812      |
+| ep_len_mean        | 27.1          |
+| ep_reward_mean     | 0.849         |
+| explained_variance | -4.47         |
+| fps                | 76133         |
+| n_updates          | 1             |
+| policy_entropy     | 5.6794524     |
+| policy_loss        | -0.0024014683 |
+| serial_timesteps   | 250           |
+| time_elapsed       | 0.00122       |
+| total_timesteps    | 25000         |
+| true_reward        | 0.0016508499  |
+| value_loss         | 2.5556254     |
+--------------------------------------
+--------------------------------------
+| approxkl           | 0.003138696   |
+| clipfrac           | 0.027695999   |
+| ep_len_mean        | 27.5          |
+| ep_reward_mean     | 0.849         |
+| explained_variance | -2.94         |
+| fps                | 96521         |
+| n_updates          | 2             |
+| policy_entropy     | 5.6880465     |
+| policy_loss        | -0.0023508754 |
+| serial_timesteps   | 500           |
+| time_elapsed       | 0.882         |
+| total_timesteps    | 50000         |
+| true_reward        | 0.0024613743  |
+| value_loss         | 2.0031905     |
+--------------------------------------

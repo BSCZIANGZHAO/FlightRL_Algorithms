@@ -1,0 +1,49 @@
+Logging to /home/klee/Desktop/flightmare/flightrl/SAC/saved/2024-02-27-01-52-57
+--------------------------------------
+| approxkl           | 0.0040702904  |
+| clipfrac           | 0.041036      |
+| ep_len_mean        | 29.4          |
+| ep_reward_mean     | 0.659         |
+| explained_variance | -3.79         |
+| fps                | 73572         |
+| n_updates          | 1             |
+| policy_entropy     | 5.6761384     |
+| policy_loss        | -0.002432552  |
+| serial_timesteps   | 250           |
+| time_elapsed       | 0.00126       |
+| total_timesteps    | 25000         |
+| true_reward        | -0.0006541448 |
+| value_loss         | 2.558721      |
+--------------------------------------
+---------------------------------------
+| approxkl           | 0.0029449097   |
+| clipfrac           | 0.028975999    |
+| ep_len_mean        | 28.2           |
+| ep_reward_mean     | 1.02           |
+| explained_variance | -2.93          |
+| fps                | 98634          |
+| n_updates          | 2              |
+| policy_entropy     | 5.677313       |
+| policy_loss        | -0.00043247556 |
+| serial_timesteps   | 500            |
+| time_elapsed       | 0.888          |
+| total_timesteps    | 50000          |
+| true_reward        | 0.002044108    |
+| value_loss         | 2.000064       |
+---------------------------------------
+-------------------------------------
+| approxkl           | 0.0050845123 |
+| clipfrac           | 0.056808002  |
+| ep_len_mean        | 28.7         |
+| ep_reward_mean     | 1.06         |
+| explained_variance | -2.03        |
+| fps                | 101142       |
+| n_updates          | 3            |
+| policy_entropy     | 5.681928     |
+| policy_loss        | 0.0023211248 |
+| serial_timesteps   | 750          |
+| time_elapsed       | 1.53         |
+| total_timesteps    | 75000        |
+| true_reward        | 0.0035653966 |
+| value_loss         | 1.6394205    |
+-------------------------------------

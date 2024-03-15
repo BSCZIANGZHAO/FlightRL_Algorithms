@@ -1,0 +1,81 @@
+Logging to /home/klee/Desktop/flightmare/flightrl/SAC/saved/2024-02-27-01-52-08
+--------------------------------------
+| approxkl           | 0.0036362887  |
+| clipfrac           | 0.035792      |
+| ep_len_mean        | 25.3          |
+| ep_reward_mean     | 0.7           |
+| explained_variance | -4.64         |
+| fps                | 69644         |
+| n_updates          | 1             |
+| policy_entropy     | 5.676469      |
+| policy_loss        | -0.0020353217 |
+| serial_timesteps   | 250           |
+| time_elapsed       | 0.0021        |
+| total_timesteps    | 25000         |
+| true_reward        | -0.0049798046 |
+| value_loss         | 2.927163      |
+--------------------------------------
+--------------------------------------
+| approxkl           | 0.0024060437  |
+| clipfrac           | 0.019384      |
+| ep_len_mean        | 26.4          |
+| ep_reward_mean     | 0.921         |
+| explained_variance | -3.72         |
+| fps                | 98626         |
+| n_updates          | 2             |
+| policy_entropy     | 5.679246      |
+| policy_loss        | -0.0014412191 |
+| serial_timesteps   | 500           |
+| time_elapsed       | 0.974         |
+| total_timesteps    | 50000         |
+| true_reward        | -0.0029472187 |
+| value_loss         | 2.3225102     |
+--------------------------------------
+---------------------------------------
+| approxkl           | 0.0032548555   |
+| clipfrac           | 0.03438        |
+| ep_len_mean        | 26.3           |
+| ep_reward_mean     | 0.475          |
+| explained_variance | -2.75          |
+| fps                | 102863         |
+| n_updates          | 3              |
+| policy_entropy     | 5.6855326      |
+| policy_loss        | -0.00038271846 |
+| serial_timesteps   | 750            |
+| time_elapsed       | 1.64           |
+| total_timesteps    | 75000          |
+| true_reward        | -0.009276319   |
+| value_loss         | 2.2294524      |
+---------------------------------------
+--------------------------------------
+| approxkl           | 0.0030271695  |
+| clipfrac           | 0.031408      |
+| ep_len_mean        | 30.1          |
+| ep_reward_mean     | 0.589         |
+| explained_variance | -1.28         |
+| fps                | 96106         |
+| n_updates          | 4             |
+| policy_entropy     | 5.691465      |
+| policy_loss        | -0.0005343765 |
+| serial_timesteps   | 1000          |
+| time_elapsed       | 2.27          |
+| total_timesteps    | 100000        |
+| true_reward        | -0.008323495  |
+| value_loss         | 1.5186471     |
+--------------------------------------
+--------------------------------------
+| approxkl           | 0.0041840463  |
+| clipfrac           | 0.046104      |
+| ep_len_mean        | 27.5          |
+| ep_reward_mean     | 0.794         |
+| explained_variance | -0.322        |
+| fps                | 95390         |
+| n_updates          | 5             |
+| policy_entropy     | 5.694873      |
+| policy_loss        | -0.0015802048 |
+| serial_timesteps   | 1250          |
+| time_elapsed       | 2.92          |
+| total_timesteps    | 125000        |
+| true_reward        | -0.0029256688 |
+| value_loss         | 0.9171076     |
+--------------------------------------

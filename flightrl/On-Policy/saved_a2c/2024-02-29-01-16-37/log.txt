@@ -1,0 +1,1 @@
+Logging to /home/klee/Desktop/flightmare/flightrl/A2C/saved/2024-02-29-01-16-37

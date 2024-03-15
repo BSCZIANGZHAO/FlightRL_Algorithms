@@ -1,0 +1,65 @@
+Logging to /home/klee/Desktop/flightmare/flightrl/SAC/saved/2024-02-27-01-53-33
+--------------------------------------
+| approxkl           | 0.003544309   |
+| clipfrac           | 0.035228      |
+| ep_len_mean        | 29.4          |
+| ep_reward_mean     | 0.643         |
+| explained_variance | -4.12         |
+| fps                | 71896         |
+| n_updates          | 1             |
+| policy_entropy     | 5.676982      |
+| policy_loss        | -0.0017157889 |
+| serial_timesteps   | 250           |
+| time_elapsed       | 0.00123       |
+| total_timesteps    | 25000         |
+| true_reward        | -0.004044122  |
+| value_loss         | 2.7905285     |
+--------------------------------------
+--------------------------------------
+| approxkl           | 0.00217005    |
+| clipfrac           | 0.017575998   |
+| ep_len_mean        | 29.5          |
+| ep_reward_mean     | 0.757         |
+| explained_variance | -3.22         |
+| fps                | 106831        |
+| n_updates          | 2             |
+| policy_entropy     | 5.6796236     |
+| policy_loss        | -0.0011534545 |
+| serial_timesteps   | 500           |
+| time_elapsed       | 0.889         |
+| total_timesteps    | 50000         |
+| true_reward        | -0.0032266052 |
+| value_loss         | 2.2890046     |
+--------------------------------------
+--------------------------------------
+| approxkl           | 0.0032769418  |
+| clipfrac           | 0.031972      |
+| ep_len_mean        | 27.2          |
+| ep_reward_mean     | 0.797         |
+| explained_variance | -2.62         |
+| fps                | 100115        |
+| n_updates          | 3             |
+| policy_entropy     | 5.6835585     |
+| policy_loss        | -0.000811132  |
+| serial_timesteps   | 750           |
+| time_elapsed       | 1.5           |
+| total_timesteps    | 75000         |
+| true_reward        | -0.0021062007 |
+| value_loss         | 2.0268302     |
+--------------------------------------
+---------------------------------------
+| approxkl           | 0.0035482529   |
+| clipfrac           | 0.040176       |
+| ep_len_mean        | 28.3           |
+| ep_reward_mean     | 0.646          |
+| explained_variance | -1.25          |
+| fps                | 100099         |
+| n_updates          | 4              |
+| policy_entropy     | 5.6881332      |
+| policy_loss        | -2.1479605e-05 |
+| serial_timesteps   | 1000           |
+| time_elapsed       | 2.12           |
+| total_timesteps    | 100000         |
+| true_reward        | -0.0008492934  |
+| value_loss         | 1.3070908      |
+---------------------------------------

@@ -1,0 +1,31 @@
+Logging to /home/klee/Desktop/flightmare/flightrl/A2C/saved/2024-02-29-01-17-30
+---------------------------------
+| ep_len_mean        | 52.2     |
+| ep_reward_mean     | 1.65     |
+| explained_variance | -0.193   |
+| fps                | 65484    |
+| nupdates           | 1        |
+| policy_entropy     | 5.68     |
+| total_timesteps    | 35000    |
+| value_loss         | 1.09     |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 53.6     |
+| ep_reward_mean     | 1.79     |
+| explained_variance | 0.182    |
+| fps                | 90933    |
+| nupdates           | 100      |
+| policy_entropy     | 5.7      |
+| total_timesteps    | 3500000  |
+| value_loss         | 0.685    |
+---------------------------------
+---------------------------------
+| ep_len_mean        | 53       |
+| ep_reward_mean     | 2.06     |
+| explained_variance | 0.345    |
+| fps                | 91683    |
+| nupdates           | 200      |
+| policy_entropy     | 5.74     |
+| total_timesteps    | 7000000  |
+| value_loss         | 0.651    |
+---------------------------------
