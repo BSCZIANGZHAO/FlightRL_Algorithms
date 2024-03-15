@@ -1,38 +1,155 @@
-# Flightmare - 左青龙
+# FlightRL - Reinforcement Learning for Flightmare
+Flightmare is a powerful quadrotor simulator, but there are too many bugs in the installation process. This project is to provide a instruction to install  Flightmare and use it to train the RL controller.
+Also, I have added some of my own code to train the model. Few of them is edited base on Stable Baselines, and rest of them is written by myself. As the result, some of the code is not perfect, but it is still a good start for the beginners to learn how to use Flightmare to train the RL controller.
 
-![Build Status](https://github.com/uzh-rpg/flightmare/workflows/CPP_CI/badge.svg) ![clang format](https://github.com/uzh-rpg/flightmare/workflows/clang_format/badge.svg)
-![License](https://img.shields.io/badge/License-MIT-blue.svg) ![website]( https://img.shields.io/website-up-down-green-red/https/naereen.github.io.svg)
 
-**Flightmare** is a flexible modular quadrotor simulator.
-Flightmare is composed of two main components: a configurable rendering engine built on Unity and a flexible physics engine for dynamics simulation.
-Those two components are totally decoupled and can run independently from each other. 
-Flightmare comes with several desirable features: (i) a large multi-modal sensor suite, including an interface to extract the 3D point-cloud of the scene; (ii) an API for reinforcement learning which can simulate hundreds of quadrotors in parallel; and (iii) an integration with a virtual-reality headset for interaction with the simulated environment.
-Flightmare can be used for various applications, including path-planning, reinforcement learning, visual-inertial odometry, deep learning, human-robot interaction, etc.
+# Install with pip
 
-**[Website](https://uzh-rpg.github.io/flightmare/)** & 
-**[Documentation](https://flightmare.readthedocs.io/)** 
 
-[![IMAGE ALT TEXT HERE](./docs/flightmare_main.png)](https://youtu.be/m9Mx1BCNGFU)
+## Prerequisites
 
-## Installation
-Installation instructions can be found in our [Wiki](https://github.com/uzh-rpg/flightmare/wiki).
-  
-## Updates
- *  17.11.2020 [Spotlight](https://youtu.be/8JyrjPLt8wo) Talk at CoRL 2020 
- *  04.09.2020 Release Flightmare
+If you have not done so already, please install the following packages:
 
-## Publication
-
-If you use this code in a publication, please cite the following paper **[PDF](http://rpg.ifi.uzh.ch/docs/CoRL20_Yunlong.pdf)**
-
+```bash
+sudo apt-get update && apt-get install -y --no-install-recommends \
+   build-essential \
+   cmake \
+   libzmqpp-dev \
+   libopencv-dev
 ```
-@inproceedings{song2020flightmare,
-    title={Flightmare: A Flexible Quadrotor Simulator},
-    author={Song, Yunlong and Naji, Selim and Kaufmann, Elia and Loquercio, Antonio and Scaramuzza, Davide},
-    booktitle={Conference on Robot Learning},
-    year={2020}
-}
+## Python environment
+It is a good idea to use virtual environments (virtualenvs) or Anaconda to make sure packages from different projects do not interfere with each other. Check here for Anaconda installation.
+
+1. To create an environment with python3.6
+
+```bash
+conda create --name ENVNAME python=3.6
+```
+2. Activate a named Conda environment
+    
+```bash
+conda activate ENVNAME
+```
+## Install Flightmare(Or directly using this project)
+```bash
+cd ~/Desktop
+git clone https://github.com/uzh-rpg/flightmare.git
+```
+## Add Environment Variable
+Add FLIGHTMARE_PATH environment variable to your .bashrc file:
+    
+```bash
+echo "export FLIGHTMARE_PATH=~/Desktop/flightmare" >> ~/.bashrc
+source ~/.bashrc
+```
+## Install dependencies
+```bash
+conda activate ENVNAME
+cd flightmare/
+# install tensorflow GPU (for non-gpu user, use pip install tensorflow==1.14)
+pip install tensorflow-gpu==1.14
+ 
+# install scikit
+pip install scikit-build
+```
+## Install FlightLib
+```bash
+cd flightmare/flightlib
+# it first compile the flightlib and then install it as a python package.
+pip install .
+```
+## Flightmare Bug Fix
+Bug 1: Build wheel for flightgym error:
+This is a known issue with the current version of flightgym. To fix this, you need to modify gtest_download.cmake
+```bash
+# change gtest_download.cmake
+cd ~/Desktop/RL_Algorithms-main/flightlib/cmake
+#change the line 8
+#from   
+GIT_TAG           master
+#to    
+GIT_TAG           main
+```
+Bug 2: Build wheel for OpenAI gym error:
+You need to manually install the gym package from the source code.  3.4.16-dev is tested to work with the current 
+version of flightgym.
+
+```bash
+pip install opencv-python==3.4.16-dev
+```
+bug 3: Build wheel for rpg-baseline error:
+```bash
+cd /path/to/flightrl 
+# change line 20 in setup.py to
+packages=['rpg_baselines','rpg_baselines.ppo','rpg_baselines.common','rpg_baselines.envs']
+```
+Generally the observed errors can be fixed by methods above, but some of my teammates meet the problem that the 
+flightrender is black. There is no clue to fix it.
+
+After installing the flightmare, you need to build flightrl
+```bash
+conda activate ENVNAME
+cd /path/to/flightmare/flightrl
+pip install .
+```
+Train neural network controller using PPO
+```bash
+cd examples
+python3 run_drone_control.py --train 1
+```
+Test a pre-trained neural network controller
+```bash
+cd examples
+python3 run_drone_control.py --train 0
+```
+With Unity Rendering
+To use unity rendering, you need first download the binary from Releases and extract it into the flightrender folder. To enable unity for visualization, double click the extracted executable file RPG_Flightmare.x84-64 and then test a pre-trained controller
+```bash
+cd examples
+python3 run_drone_control.py --train 0 --render 1
 ```
 
-## License
-This project is released under the MIT License. Please review the [License file](LICENSE) for more details.
+# If you are using my project, you can directly use the following command to train the model
+```bash
+cd /path/to/flightrl/On-Policy
+python3 On_policy_control.py --train 1 -a PPO
+```
+default model is PPO, A2C to train the model. 
+For off-policy, you can use the following command to train the model
+```bash
+cd /path/to/flightrl/Off-Policy
+python3 Off_policy_control.py --train 1 -a TD3
+```
+default model is SAC, you can use TD3 or DDPG to train the model.
+
+You can use the following command to test the model
+```bash
+python3 Off_policy_control.py --train 0 --render 1  -a TD3 -w actor_TD3.pth1005.0
+```
+or
+```bash
+python3 On_policy_control.py --train 0 --render 1  -a A2C -w 2024-03-14-23-26-57_Iteration_4319.zip
+```
+The -w is the filename to the model you want to test.
+
+Caution: The training process for off-policy algorithms is **EXTREMELY** time-consuming. Even I installed CUDA, but there is no significant improvement.
+My computer is equipped with following hardware:
+- CPU: Intel(R) Core(TM) i9-13900K CPU
+- GPU: NVIDIA GeForce RTX 4090
+- RAM: 32GB
+- OS: Ubuntu 20.04
+It takes me about 2 hours for 1500 episodes. There are 2 options for this problem:
+- When the return increasing to about 100, manually stop the training process. I have already add the save model function in the code, so you stop the training process anytime you want.
+- Uncomment the line 63-65 in rl_utils.py to add a time limit for the training process. The default time limit is 20s,
+
+There are many dependencies for this project, here are some of them:
+- Python: 3.6
+- OpenCV: 3.4.16-dev
+- Tensorflow: 1.14 (1.15 for tensorboard in off-policy)
+- Sometimes flightmare requires you to manually install the Zmqpp package
+- Sometimes flightmare requires you to manually install the ruamel package
+- CUDA: 11.3
+- Torch: 1.10.2+cu113
+
+
+
