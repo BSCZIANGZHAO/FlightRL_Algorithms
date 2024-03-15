@@ -42,10 +42,62 @@ def parser():
                         help="Directory where to save the checkpoints and training metrics")
     parser.add_argument('--seed', type=int, default=0,
                         help="Random seed")
-    parser.add_argument('-w', '--weight', type=str, default='/home/zy/mypj/flightmare/flightrl/runner/saved/2024-03-10-12-28-19_24500000.zip',
+    parser.add_argument('-w', '--weight', type=str, default='./saved/2024-03-14-21-13-30/25000.zip',
                         help='trained weight path')
     return parser
 
+def sac_api(train=0, render=0, save_interval=1000000,
+             seed=0, weight='./saved/2024-03-14-21-13-30/25000.zip'):
+    # save_dir = os.path.dirname(os.path.realpath(__file__))
+    cfg = YAML().load(open(os.environ["FLIGHTMARE_PATH"] +
+                           "/flightlib/configs/vec_env.yaml", 'r'))
+    if not train:
+        cfg["env"]["num_envs"] = 1
+        cfg["env"]["num_threads"] = 1
+
+    if render:
+        cfg["env"]["render"] = "yes"
+    else:
+        cfg["env"]["render"] = "no"
+
+    env = wrapper.FlightEnvVec(QuadrotorEnv_v1(
+        dump(cfg, Dumper=RoundTripDumper), False))
+
+    # configure_random_seed(args.seed, env=env)
+    same_seeds(seed)
+    env.seed(seed)
+
+    #
+    if train:
+        # save the configuration and other files
+        rsg_root = os.path.dirname(os.path.abspath(__file__))
+        log_dir = rsg_root + '/saved'
+        saver = U.ConfigurationSaver(log_dir=log_dir)
+        model = SAC(
+            tensorboard_log=saver.data_dir,
+            policy='MlpPolicy',  # check activation function
+            policy_kwargs=dict(
+                net_arch=[256, 256]),
+            env=env,
+            batch_size=256,
+
+            gamma=0.99,  # lower 0.9 ~ 0.99
+            # n_steps=math.floor(cfg['env']['max_time'] / cfg['env']['ctl_dt']),
+            verbose=1
+        )
+
+        logger.configure(folder=saver.data_dir)
+        for i in range(25):
+            model.learn(
+                total_timesteps=save_interval,
+                reset_num_timesteps=False,
+            )
+            model.save(f"{saver.data_dir}/{(i + 1) * save_interval}")
+
+    # # Testing mode with a trained weight
+    else:
+        model = SAC.load(weight)
+        test_model(env, model, render=render)
 
 def main():
     args = parser().parse_args()
@@ -105,3 +157,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # sac_api(0,1)

@@ -45,7 +45,7 @@ def same_seeds(seed):
 
 def parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train', type=int, default=0,
+    parser.add_argument('--train', type=int, default=1,
                         help="To train new model or simply test pre-trained model")
     parser.add_argument('--render', type=int, default=0,
                         help="Enable Unity Render")
@@ -55,7 +55,7 @@ def parser():
                         help="Directory where to save the checkpoints and training metrics")
     parser.add_argument('--seed', type=int, default=0,
                         help="Random seed")
-    parser.add_argument('-w', '--weight', type=str, default='/home/hanyu/Desktop/RL_algorithm/flightrl_baseline3/runner/saved/2024-03-07-01-20-29/dqn.zip',
+    parser.add_argument('-w', '--weight', type=str, default='./saved/2024-03-14-22-03-10/20000.zip',
                         help='trained weight path')
     return parser
 
@@ -91,12 +91,23 @@ def main():
             policy='MlpPolicy',  # check activation function
             policy_kwargs=dict(
                 net_arch=[128, 128]),
-            batch_size=64,
             env=env,
+            batch_size=64,
+            buffer_size=100000,
+            gamma=0.99,
+            learning_starts=0,
+            learning_rate=6e-4,
+            target_update_interval=250,
+            train_freq=4,
+            gradient_steps=-1,
+            exploration_fraction=0.12,
+            exploration_final_eps=0.1,
+
             # nminibatches=1,
             # noptepochs=10,
             # cliprange=0.2,
             verbose=1,
+            device='cpu'
         )
 
         logger.configure(folder=saver.data_dir)
